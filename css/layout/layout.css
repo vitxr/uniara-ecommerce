@@ -44,9 +44,30 @@ div#footer{clear:left;width:100%}
     flex-wrap: wrap;
 }
 
-.gallery-wrapper > img {
+.gallery-wrapper > .img {
     max-width: 50%;
     margin: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-wrapper > .img > .img-info {
+    position: absolute;
+    top: 0;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.8);
+    bottom: 0;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+}
+
+.gallery-wrapper > .img > .img-info:hover {
+    opacity: 1;
+    transition: .3s;
 }
 
 .contact, .about {
@@ -75,3 +96,55 @@ div#footer{clear:left;width:100%}
 }
 
 .contact h2 { text-align: center; }
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    height: calc(100vh - 125px);
+    padding: 100px 50px;
+}
+
+.form label {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form label span {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    transition: .5s;
+}
+
+.form label input {
+    border: none;
+    width: 100%;
+    border: 1px solid #3c2411;
+    border-radius: 5px;
+    padding: 17px 15px 8px;
+}
+
+.form label input:focus {
+    outline: none;
+    border-color: #BF8654;
+}
+
+.form label input:focus + span, .form label input:not(:placeholder-shown) + span {
+    font-size: 10px;
+    top: 3px;
+}
+
+.form label input:focus + span {
+    color: #BF8654;
+}
+
+.form button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #BF8654;
+    color: #FFF;
+    line-height: 40px;
+    border-radius: 5px;
+}
